@@ -10,10 +10,13 @@ import DishDetail from './DishdetailComponent';
 import Contact from './ContactComponent';
 import Header from "./HeaderComponent";
 import Footer from './FooterComponent';
+import About from './AboutComponent';
 import {Switch, Route, Redirect } from 'react-router-dom'; 
   
 
 class Main extends Component{
+
+
   constructor(props){
     super(props);
     this.state = {
@@ -36,6 +39,22 @@ class Main extends Component{
       leader={this.state.leaders.filter((leader) => leader.featured)[0]}
   />);
   }
+
+  const DishWithId = ({match}) => {
+    return(
+        <DishDetail dish={this.state.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]} 
+          comms={this.state.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))} />
+    );
+  };
+
+  const Aboutus = ()=> {
+return (
+<About leaders = {this.state.leaders}/>
+
+);
+
+  }
+  
    return (
     <div className="App">
       <Header/>
@@ -43,7 +62,9 @@ class Main extends Component{
         <Route path="/home" component={HomePage} />
         {/* In component, I can pass the name of the component if there is no poprs I need to pass */}
         <Route exact path="/menu" component={()=><Menu dishes={this.state.dishes}/>}/>
+        <Route path='/menu/:dishId' component={DishWithId} />
         <Route exact path='/contactus' component={Contact} />} />
+        <Route exact path='/aboutus' component={Aboutus} />} />
         {/* Default path */}
         <Redirect to="/home" />
 

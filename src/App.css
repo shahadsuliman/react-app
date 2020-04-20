@@ -10,6 +10,11 @@
   min-height:400px;
 }
 
+.bread
+{
+  padding: 15px;
+}
+
 .footer{
   background-color: #D1C4E9;
   margin:0px auto;
@@ -30,4 +35,8 @@ address{
 
 .navbar-dark {
   background-color: #512DA8;
+}
+
+.row .media {
+  padding:20px;
 }
