@@ -1,7 +1,9 @@
-        import React  from 'react';
-        import { Card, CardImg, CardImgOverlay, CardText, CardBody,
+import React  from 'react';
+import { Card, CardImg, CardImgOverlay, CardText, CardBody,
             CardTitle, Breadcrumb } from 'reactstrap';
-        import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import CommentForm from './CommentForm';
+
 
 
     
@@ -19,6 +21,12 @@ function RenderMenuItem({dish})
            
         </Card>
     )
+}
+
+function RenderComments()
+{
+
+ return (<CommentForm></CommentForm>);   
 }
      
     //Another way of implementing functional compoenent like function Menu()
