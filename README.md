@@ -1,8 +1,9 @@
 
-###This git repository is created for the coursera's course: Front-End Web Development with React
  
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### This git repository is created for the coursera's course: Front-End Web Development with React
 
 ## Available Scripts
 
